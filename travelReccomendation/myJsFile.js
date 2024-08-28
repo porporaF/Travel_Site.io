@@ -1,8 +1,8 @@
-const BookedTravels [];
+
 
 function searchClear ()
 {
-    document.getElementById("searchField").value="";
+    document.getElementById('searchField').value="";
 }
 
 function BookNow ()
