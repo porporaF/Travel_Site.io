@@ -12,27 +12,26 @@ function BookNow ()
 
 function displaySearch(){
     const city = document.getElementById('searchField').value;
-    let countriesArray;
-    let TemplesArray;
-    let beachesArray;
+   console.log('city:',city);
 
 const jsonUrl ='./travel_recommendation_api.json';
     fetch(jsonUrl)
     .then (response=> response.json())
- .then(data => {
+    .then(data => {
+        console.log()
+        for (let i=0;i<Object.keys(data['countries']).length;i++)
+        {
+            console.log(data['countries'][i].name);
+        //if (data['countries'].name.includes(city)){
+        //console.log('ok');
+        }
 
- console.log(Object.keys (data));
+                    }
+       
+         )
 
- console.log('Lunghezza Arrey: ',Object.keys(data).length);
-
- console.log(data['countries']);
- 
- console.log(data['countries'][0].name);
-         }
- 
-   )
+                        }
     
- }
 
 document.getElementById("btnClear").addEventListener("click",searchClear);
 // document.getElementById("btnBook").addEventListener("click",BookNow);
