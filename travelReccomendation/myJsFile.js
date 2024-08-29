@@ -20,17 +20,14 @@ const jsonUrl ='./travel_recommendation_api.json';
     fetch(jsonUrl)
     .then (response=> response.json())
  .then(data => {
-console.log(typeof data);
-const jsonData= JSON.stringify(data);
-console.log(typeof jsonData);
-console.log(jsonData);
 
-const jsonDataName= JSON.stringify(data,['beaches']);
-console.log(typeof jsonDataName);
-console.log(JSON.stringify(jsonDataName),['name']);
+ console.log(Object.keys (data));
 
+ console.log('Lunghezza Arrey: ',Object.keys(data).length);
 
-        
+ console.log(data['countries']);
+ 
+ console.log(data['countries'][0].name);
          }
  
    )
