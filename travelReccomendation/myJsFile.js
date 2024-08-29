@@ -22,11 +22,12 @@ const jsonUrl ='./travel_recommendation_api.json';
         for (let i=0;i<Object.keys(data['countries']).length;i++)
         {
             console.log(data['countries'][i].name);
-        //if (data['countries'].name.includes(city)){
-        //console.log('ok');
+        if (data['countries'][i].name.includes(city)){
+        console.log('ok');
         }
 
                     }
+                }
        
          )
 
