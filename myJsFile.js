@@ -3,6 +3,7 @@
 function searchClear ()
 {
     document.getElementById('searchField').value="";
+   
 }
 
 function BookNow ()
@@ -12,46 +13,51 @@ function BookNow ()
 
 function displaySearch(){
     const city = document.getElementById('searchField').value;
-   console.log('city:',city);
+   
+    console.log('city:',city);
 
 const jsonUrl ='./travel_recommendation_api.json';
     fetch(jsonUrl)
     .then (response=> response.json())
     .then(data => {
-        console.log()
+        console.log('Numero Countries=',Object.keys(data['countries']).length);
         for (let i=0;i<Object.keys(data['countries']).length;i++)
         {
-
+           
         if (data['countries'][i].name.includes(city)){
 
-         for (let j=0;j<Object.keys(data['countries'][i].cities).length;j++) {  
-           console.log(data['countries'][i].cities[i].imageUrl);
-           var cityName=data['countries'][i].cities[i].name;
-           var imgUrl=data['countries'][i].cities[i].imageUrl;
-           console.log(imgUrl);
-           console.log(cityName);
-            fillDiv(cityName,imgUrl);
-
-
-        }
+         for (let j=0;j<Object.keys(data['countries'][j].cities).length;j++) {  
+            
+           var ScityName=data['countries'][i].cities[j].name;
+           var imgUrl=data['countries'][i].cities[j].imageUrl;
+           console.log('Prima della funzione',imgUrl);
+           console.log('Prima della funzione CityName:',ScityName);
            
-        }
-        }
-
-                    })
+           fillDiv(ScityName,imgUrl);
+                                                                            }
+           
+                                                    }
+        }    
+              })
                            }
+
 function fillDiv (cityName,url){
             var divElement =document.getElementById('searchList');
-            var ulElement=document.createElement('ul');
-            var liElement=document.createElement('li');
-            var TextElement=document.createElement(cityName);
-            var imgElement=document.createElement('img');
+            var ulElement=document.createElement("ul");
+            var liElement=document.createElement("li");
+            var TextElement=document.createTextNode(cityName);
+            console.log('Dopo la funzione',cityName);
+            var imgElement=document.createElement("img");
             imgElement.src=url;
-            liElement.appendchild(TextElement);
-            liElement.appendchild(imgElement);
-            ulElement.appendchild(liElement)
-            divElement.appendchild(ulElement);
+            var breakElement = document.createElement("br");
+            liElement.appendChild(TextElement);
+            liElement.appendChild(imgElement);
+            liElement.appendChild(breakElement);
+            ulElement.appendChild(liElement)
+            divElement.appendChild(ulElement);
             }
+
+
     
 
 document.getElementById("btnClear").addEventListener("click",searchClear);
