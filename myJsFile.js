@@ -53,7 +53,7 @@ function fillDiv (cityName,url){
             var btnView =document.createElement("button");
             btnView.textContent="View";
             btnView.type="button";
-            liElement.appendChild(breakElement);
+          
             liElement.appendChild(TextElement);
             liElement.appendChild(breakElement);
             liElement.appendChild(imgElement);
