@@ -25,22 +25,33 @@ const jsonUrl ='./travel_recommendation_api.json';
         if (data['countries'][i].name.includes(city)){
 
          for (let j=0;j<Object.keys(data['countries'][i].cities).length;j++) {  
-            var divElement =document.getElementById('searchList');
-            var ulElement=document.createElement('ul');
-            var liElement=document.createElement('li');
-            var TextElement=document.createElement(data['countries'][i].name);
-            var imgElement=document.createElement('img');
+           console.log(data['countries'][i].cities[i].imageUrl);
+           var cityName=data['countries'][i].cities[i].name;
+           var imgUrl=data['countries'][i].cities[i].imageUrl;
+           console.log(imgUrl);
+           console.log(cityName);
+            fillDiv(cityName,imgUrl);
 
-            console.log(data['countries'][i].cities[i].imageUrl);
-         }
-            //liElement.appendChild
-            //let img = document.createElement('img');
-            //img.src =data['countries'][i].imgUrl;
+
+        }
+           
         }
         }
 
                     })
                            }
+function fillDiv (cityName,url){
+            var divElement =document.getElementById('searchList');
+            var ulElement=document.createElement('ul');
+            var liElement=document.createElement('li');
+            var TextElement=document.createElement(cityName);
+            var imgElement=document.createElement('img');
+            imgElement.src=url;
+            liElement.appendchild(TextElement);
+            liElement.appendchild(imgElement);
+            ulElement.appendchild(liElement)
+            divElement.appendchild(ulElement);
+            }
     
 
 document.getElementById("btnClear").addEventListener("click",searchClear);
