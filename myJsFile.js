@@ -50,8 +50,17 @@ function fillDiv (cityName,url){
             var imgElement=document.createElement("img");
             imgElement.src=url;
             var breakElement = document.createElement("br");
+            var btnView =document.createElement("button");
+            btnView.textContent="View";
+            btnView.type="button";
+            liElement.appendChild(breakElement);
             liElement.appendChild(TextElement);
+            liElement.appendChild(breakElement);
             liElement.appendChild(imgElement);
+            liElement.appendChild(breakElement);
+             ulElement.appendChild(liElement);
+             liElement.appendChild(breakElement);
+            liElement.appendChild(btnView);
             liElement.appendChild(breakElement);
             ulElement.appendChild(liElement)
             divElement.appendChild(ulElement);
