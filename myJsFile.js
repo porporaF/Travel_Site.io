@@ -20,7 +20,9 @@ const jsonUrl ='./travel_recommendation_api.json';
     fetch(jsonUrl)
     .then (response=> response.json())
     .then(data => {
-        console.log('Numero Countries=',Object.keys(data['countries']).length);
+
+       
+
         for (let i=0;i<Object.keys(data['countries']).length;i++)
         {
            

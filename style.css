@@ -99,15 +99,16 @@ h2 {
   float: left;
   display: block;
   color: white;
-  text-align: left;
-  padding: 14px 16px;
-  text-decoration: none;
+  text-align: left;                        
+  padding: 14px 16px;                                   
+  text-decoration: none;      
   font-size: 17px;
     }
     .orgChart table, tr , td
     {
-   border-color: white;  
+   border-color: white;                                                                                                                  
+                                          
   text-align: center;
-   border: 1px solid;  
+                                                                                                                                                                          
        }
- 
+
