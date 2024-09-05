@@ -12,36 +12,31 @@ function BookNow ()
 }
 
 function displaySearch(){
-    const city = document.getElementById('searchField').value;
+    const searchValue = document.getElementById('searchField').value;
    
-    console.log('city:',city);
+       
+    if (searchValue.includes('beaches')){
 
 const jsonUrl ='./travel_recommendation_api.json';
     fetch(jsonUrl)
     .then (response=> response.json())
     .then(data => {
-
-       
-
-        for (let i=0;i<Object.keys(data['beaches']).length;i++)
+               for (let i=0;i<Object.keys(data['beaches']).length;i++)
         {
            
-        if (data['beaches'][i].name.includes(city)){
-
-         for (let j=0;j<Object.keys(data['beaches']).length;j++) {  
-            
-           var ScityName=data['beaches'][j].name;
-           var imgUrl=data['beaches'][j].imageUrl;
+          
+           var ScityName=data['beaches'][i].name;
+           var imgUrl=data['beaches'][i].imageUrl;
            console.log('Prima della funzione',imgUrl);
            console.log('Prima della funzione CityName:',ScityName);
            
            fillDiv(ScityName,imgUrl);
-                                                                            }
+        }
            
-                                                    }
-        }    
-              })
-                           }
+                 })
+        
+                                      }
+                        }
 
 function fillDiv (cityName,url){
             var divElement =document.getElementById('searchList');
