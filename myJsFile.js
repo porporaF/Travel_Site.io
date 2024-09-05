@@ -23,15 +23,15 @@ const jsonUrl ='./travel_recommendation_api.json';
 
        
 
-        for (let i=0;i<Object.keys(data['countries']).length;i++)
+        for (let i=0;i<Object.keys(data['beaches']).length;i++)
         {
            
-        if (data['countries'][i].name.includes(city)){
+        if (data['beaches'][i].name.includes(city)){
 
-         for (let j=0;j<Object.keys(data['countries'][j].cities).length;j++) {  
+         for (let j=0;j<Object.keys(data['beaches']).length;j++) {  
             
-           var ScityName=data['countries'][i].cities[j].name;
-           var imgUrl=data['countries'][i].cities[j].imageUrl;
+           var ScityName=data['beaches'][j].name;
+           var imgUrl=data['beaches'][j].imageUrl;
            console.log('Prima della funzione',imgUrl);
            console.log('Prima della funzione CityName:',ScityName);
            
