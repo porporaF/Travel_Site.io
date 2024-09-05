@@ -12,11 +12,10 @@ function BookNow ()
 }
 
 function displaySearch(){
-    const searchValue = document.getElementById('searchField').value;
-   
-       
-
-const jsonUrl ='./travel_recommendation_api.json';
+    const searchTextValue = document.getElementById('searchField').value;
+   console.log (typeof(searchTextValue));
+   const searchValue =searchTextValue.toLowerCase();
+    const jsonUrl ='./travel_recommendation_api.json';
     fetch(jsonUrl)
     .then (response=> response.json())
     .then(data => {
